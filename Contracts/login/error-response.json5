@@ -1,0 +1,10 @@
+//Error response object
+{
+    "authenticationStatusCode": 401,
+    "token": null,
+	"refreshToken":null,
+    "userDetails": {
+        "name": null,
+        "email": null
+    }
+}

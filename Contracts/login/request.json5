@@ -1,0 +1,11 @@
+//POST /api/v1.0/Signin
+
+//Request object
+{
+	//[Mandatory] username of the employee
+	"username" : "jamesbond" ,
+	//[Mandatory] description of the product
+	"password" : "007",
+	//[Mandatory] boolean to keep user signed in after closing of tab is set true
+	"rememberMe" : false
+}

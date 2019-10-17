@@ -1,0 +1,16 @@
+//Response data
+{
+	//[Mandatory] status code of credential authentication
+    "authenticationStatusCode": 200,
+	//[Mandatory] access token genrated as a result of successful login 
+    "token": 78992sdd8900-sd********************,
+	//[Optional]  refreshToken can be optionally sent to user if he check the remember me button to maintain the session for user for longer span without need of re-entering credentials
+	"refreshToken": 7992*&%^**********************,
+	//[Mandatory] details of users
+    "userDetails": {
+		//[Mandatory]
+        "name": "Harry Potter",
+		//[Mandatory]
+        "email": "cpadole@tavisca.com"
+    }
+}
