@@ -1,10 +1,9 @@
 //Error response object
 {
-    "authenticationStatusCode": 401,
-    "token": null,
-	"refreshToken":null,
-    "userDetails": {
-        "name": null,
-        "email": null
-    }
+    "code": "401",
+	"message": [
+				{
+				"Invalid Username/Password"
+				}
+				]
 }

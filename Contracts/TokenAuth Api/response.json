@@ -4,5 +4,8 @@
     "AuthenticationStatusCode" : "200",
 
     //Mandatory String of message
-    "Message":"The Token is valid"
+    "Message":[
+				{"The Token is valid"},
+				{Username}
+			  ]
 }
