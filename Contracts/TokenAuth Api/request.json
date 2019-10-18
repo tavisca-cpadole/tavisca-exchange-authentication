@@ -1,7 +1,0 @@
-//GET /api/tokenauth
-
-//Header
-{
-    //[Mandatory] Access Token to be validated
-    "AuthKey": "adba-sd123.244_gss34"
-}

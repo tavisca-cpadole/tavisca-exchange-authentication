@@ -1,0 +1,5 @@
+//Response Data with 200:ok 
+{
+    //Mandatory Validity of the Token
+    "code" : "200"
+}

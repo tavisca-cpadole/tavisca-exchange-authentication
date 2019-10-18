@@ -2,17 +2,17 @@
 
 {
     //Mandatory UnAuthorized Token Response
-    "AuthenticationStatusCode" : "401",
+    "code" : "401",
 
     //Mandatory String of message
-    "Message":"Invalid Access Token"
+    "message":"Invalid Access Token"
 }
 
 //Error Response Data with 400:bad req
 {
         //Mandatory BadRequest Response
-        "AuthenticationStatusCode" : "400",
+        "code" : "400",
 
         //Mandatory String of message
-        "Message":"Header is missing the AuthKey Field"
+        "message":"Header is missing the AuthKey Field"
 }
