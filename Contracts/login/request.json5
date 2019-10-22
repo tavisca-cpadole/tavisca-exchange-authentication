@@ -1,4 +1,4 @@
-//POST /api/v1.0/{applicationname}/Signin
+//POST /api/v1.0/{applicationname}/signin
 
 //Request object
 {

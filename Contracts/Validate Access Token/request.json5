@@ -2,7 +2,5 @@
 
 //[Mandatory] Access Token which needs to be validated
 #Header  "accessToken": "adba-sd123.244_gss34"
-{
-	//[Mandatory] username of the employee
-	"userid":12345
-}
+//[Mandatory] UserId which needs to be validated
+#Header  "userid":12345

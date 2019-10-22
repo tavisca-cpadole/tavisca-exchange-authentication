@@ -1,6 +1,5 @@
 //Error response object
 {
     "code": "401",
-	"message": "Invalid Username/Password"
-				
+	"message": "Invalid Username/Password"				
 }
