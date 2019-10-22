@@ -1,4 +1,4 @@
-//GET /api/v1.0/{applicationname}/validateAccessToken
+//GET /api/v1.0/{applicationname}/validateaccesstoken
 
 //[Mandatory] Access Token which needs to be validated
 #Header  "accessToken": "adba-sd123.244_gss34"
