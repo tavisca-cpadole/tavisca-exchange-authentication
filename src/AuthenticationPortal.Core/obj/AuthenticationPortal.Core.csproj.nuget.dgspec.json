@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Core\\AuthenticationPortal.Core.csproj": {}
+    "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Core\\AuthenticationPortal.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Core\\AuthenticationPortal.Core.csproj": {
+    "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Core\\AuthenticationPortal.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Core\\AuthenticationPortal.Core.csproj",
+        "projectUniqueName": "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Core\\AuthenticationPortal.Core.csproj",
         "projectName": "AuthenticationPortal.Core",
-        "projectPath": "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Core\\AuthenticationPortal.Core.csproj",
+        "projectPath": "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Core\\AuthenticationPortal.Core.csproj",
         "packagesPath": "C:\\Users\\cpadole\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Core\\obj\\",
+        "outputPath": "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -72,6 +72,10 @@
             "Autofac.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[5.0.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.5.0, )"
             }
           },
           "imports": [

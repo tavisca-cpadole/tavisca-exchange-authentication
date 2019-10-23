@@ -1,4 +1,5 @@
 ﻿using Authentication.Services;
+using AuthenticationPortal.Web.Validations;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,10 +10,11 @@ namespace Authentication.Controllers
     [ApiController]
     public class SigninController : ControllerBase
     {
-        private readonly IUserAuthentication userAuthentication;
+        private readonly IUserAuthentication _userAuthentication;
+        private readonly SignInRequestValidation _requestValidation = new SignInRequestValidation();
         public SigninController(IUserAuthentication userAuthentication)
         {
-            this.userAuthentication = userAuthentication;
+            _userAuthentication = userAuthentication;
         }
 
         // GET: api/Signin       
@@ -33,7 +35,7 @@ namespace Authentication.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(SignInRequest signInRequest)
         {
-            return Ok(userAuthentication.SignIn(signInRequest).Result);
+            return Ok(_userAuthentication.SignIn(signInRequest).Result);
         }
 
         // PUT: api/Signin/5

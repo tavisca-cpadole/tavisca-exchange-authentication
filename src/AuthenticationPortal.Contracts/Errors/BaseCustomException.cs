@@ -43,4 +43,11 @@ namespace Authentication
         }
     }
 
+    public class InvalidRequestException : BaseCustomException
+    {
+        public InvalidRequestException(string message) : base(message, (int)HttpStatusCode.BadRequest)
+        {
+        }
+    }
+
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Services\\AuthenticationPortal.Services.csproj": {}
+    "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Services\\AuthenticationPortal.Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Contracts\\AuthenticationPortal.Contracts.csproj": {
+    "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Contracts\\AuthenticationPortal.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Contracts\\AuthenticationPortal.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Contracts\\AuthenticationPortal.Contracts.csproj",
         "projectName": "AuthenticationPortal.Contracts",
-        "projectPath": "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Contracts\\AuthenticationPortal.Contracts.csproj",
+        "projectPath": "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Contracts\\AuthenticationPortal.Contracts.csproj",
         "packagesPath": "C:\\Users\\cpadole\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Contracts\\obj\\",
+        "outputPath": "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -72,6 +72,10 @@
             "Autofac.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[5.0.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.5.0, )"
             }
           },
           "imports": [
@@ -93,14 +97,14 @@
         }
       }
     },
-    "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Services\\AuthenticationPortal.Services.csproj": {
+    "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Services\\AuthenticationPortal.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Services\\AuthenticationPortal.Services.csproj",
+        "projectUniqueName": "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Services\\AuthenticationPortal.Services.csproj",
         "projectName": "AuthenticationPortal.Services",
-        "projectPath": "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Services\\AuthenticationPortal.Services.csproj",
+        "projectPath": "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Services\\AuthenticationPortal.Services.csproj",
         "packagesPath": "C:\\Users\\cpadole\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Services\\obj\\",
+        "outputPath": "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -119,8 +123,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Contracts\\AuthenticationPortal.Contracts.csproj": {
-                "projectPath": "C:\\Users\\cpadole\\source\\repos\\AuthenticationPortal\\src\\AuthenticationPortal.Contracts\\AuthenticationPortal.Contracts.csproj"
+              "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Contracts\\AuthenticationPortal.Contracts.csproj": {
+                "projectPath": "C:\\Users\\cpadole\\source\\repos\\tavisca-exchange-authentication\\src\\AuthenticationPortal.Contracts\\AuthenticationPortal.Contracts.csproj"
               }
             }
           }
@@ -165,6 +169,10 @@
             "Autofac.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[5.0.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.5.0, )"
             },
             "Microsoft.Extensions.Options": {
               "target": "Package",

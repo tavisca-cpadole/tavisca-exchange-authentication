@@ -6,3 +6,11 @@ C:\Users\cpadole\source\repos\AuthenticationPortal\src\AuthenticationPortal.Core
 C:\Users\cpadole\source\repos\AuthenticationPortal\src\AuthenticationPortal.Core\bin\Debug\netcoreapp3.0\AuthenticationPortal.Core.pdb
 C:\Users\cpadole\source\repos\AuthenticationPortal\src\AuthenticationPortal.Core\obj\Debug\netcoreapp3.0\AuthenticationPortal.Core.dll
 C:\Users\cpadole\source\repos\AuthenticationPortal\src\AuthenticationPortal.Core\obj\Debug\netcoreapp3.0\AuthenticationPortal.Core.pdb
+C:\Users\cpadole\source\repos\tavisca-exchange-authentication\src\AuthenticationPortal.Core\bin\Debug\netcoreapp3.0\AuthenticationPortal.Core.deps.json
+C:\Users\cpadole\source\repos\tavisca-exchange-authentication\src\AuthenticationPortal.Core\bin\Debug\netcoreapp3.0\AuthenticationPortal.Core.dll
+C:\Users\cpadole\source\repos\tavisca-exchange-authentication\src\AuthenticationPortal.Core\bin\Debug\netcoreapp3.0\AuthenticationPortal.Core.pdb
+C:\Users\cpadole\source\repos\tavisca-exchange-authentication\src\AuthenticationPortal.Core\obj\Debug\netcoreapp3.0\AuthenticationPortal.Core.csprojAssemblyReference.cache
+C:\Users\cpadole\source\repos\tavisca-exchange-authentication\src\AuthenticationPortal.Core\obj\Debug\netcoreapp3.0\AuthenticationPortal.Core.AssemblyInfoInputs.cache
+C:\Users\cpadole\source\repos\tavisca-exchange-authentication\src\AuthenticationPortal.Core\obj\Debug\netcoreapp3.0\AuthenticationPortal.Core.AssemblyInfo.cs
+C:\Users\cpadole\source\repos\tavisca-exchange-authentication\src\AuthenticationPortal.Core\obj\Debug\netcoreapp3.0\AuthenticationPortal.Core.dll
+C:\Users\cpadole\source\repos\tavisca-exchange-authentication\src\AuthenticationPortal.Core\obj\Debug\netcoreapp3.0\AuthenticationPortal.Core.pdb

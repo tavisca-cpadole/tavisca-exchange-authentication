@@ -68,7 +68,6 @@ namespace AuthenticationPortal.Web
             //configure auto fac here
             builder.RegisterType<AwsCognito>().As<IUserAuthentication>();
             builder.RegisterType<AWSCognitoAuth>().As<ITokenAuthentication>();
-
         }
     }
 }
