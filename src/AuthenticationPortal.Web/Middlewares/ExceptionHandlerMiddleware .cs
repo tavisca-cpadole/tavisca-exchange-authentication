@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Authentication.Errors;
+using AuthenticationPortal.Errors;
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
 using System.Net;
@@ -32,18 +34,18 @@ namespace Authentication
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             var response = context.Response;
-            var customException = exception.InnerException as BaseCustomException;
+            var customException = exception.InnerException as BaseException;
             var statusCode = (int)HttpStatusCode.InternalServerError;
-            var message = "Unexpected Error";
+            var message = CustomErrorCodes.getErrorMessage(801);
 
-            if (null != customException)
+            if (customException != null)
             {
                 message = customException.Message;
                 statusCode = customException.Code;
             }
 
             response.ContentType = "application/json";
-            response.StatusCode = statusCode;
+            response.StatusCode = (int)HttpStatusCode.BadRequest;
             return response.WriteAsync(JsonConvert.SerializeObject(new CustomErrorResponse
             {
                 Code = statusCode,

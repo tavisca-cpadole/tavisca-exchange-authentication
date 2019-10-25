@@ -1,4 +1,5 @@
-﻿using Authentication.Model;
+﻿using Authentication.Errors;
+using Authentication.Model;
 using Authentication.TokenAuthServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
@@ -10,8 +11,8 @@ namespace Authentication.Controllers
     [Route("api/[controller]")]
     public class TokenAuthController : Controller
     {
-        private readonly ITokenAuthentication tokenAuthentication;
-        public TokenAuthController(ITokenAuthentication tokenAuthentication)
+        private readonly ITokenAuthenticator tokenAuthentication;
+        public TokenAuthController(ITokenAuthenticator tokenAuthentication)
         {
             this.tokenAuthentication = tokenAuthentication;
         }
@@ -26,12 +27,12 @@ namespace Authentication.Controllers
 
             if (Request.Headers.TryGetValue("AuthKey", out x))
             {
-                AccessToken token = new AccessToken() { TokenString = x.First<string>() };
+                Token token = new Token() { TokenString = x.First<string>() };
                 return Ok(tokenAuthentication.AuthenticateToken(token).Result);
             }
             else
             {
-                throw new MissingHeaderException("Header is missing the AuthKey Field");
+                throw new CustomException(803);
             }
 
         }

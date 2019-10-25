@@ -33,12 +33,15 @@ namespace AuthenticationPortal.Web
                     .AllowAnyHeader());
             });
 
-            services.Configure<Settings>(Configuration.GetSection("id"));
+            services.Configure<AwsCognitoCredentials>(Configuration.GetSection("id"));
             services.Configure<CookiePolicyOptions>(options =>
             {
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+
+
 
         }
 
@@ -55,6 +58,8 @@ namespace AuthenticationPortal.Web
 
             app.UseRouting();
 
+            app.UseCors("CorsPolicy");
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -67,7 +72,7 @@ namespace AuthenticationPortal.Web
         {
             //configure auto fac here
             builder.RegisterType<AwsCognito>().As<IUserAuthentication>();
-            builder.RegisterType<AWSCognitoAuth>().As<ITokenAuthentication>();
+            builder.RegisterType<AWSCognitoAuth>().As<ITokenAuthenticator>();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Authentication.Services;
 using AuthenticationPortal.Web.Validations;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace Authentication.Controllers
     public class SigninController : ControllerBase
     {
         private readonly IUserAuthentication _userAuthentication;
-        private readonly SignInRequestValidation _requestValidation = new SignInRequestValidation();
+        private readonly SignInRequestValidator _requestValidation = new SignInRequestValidator();
         public SigninController(IUserAuthentication userAuthentication)
         {
             _userAuthentication = userAuthentication;
@@ -35,7 +36,16 @@ namespace Authentication.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(SignInRequest signInRequest)
         {
-            return Ok(_userAuthentication.SignIn(signInRequest).Result);
+            var result = _requestValidation.Validate(signInRequest);
+            if (result.IsValid)
+            {
+                return Ok(_userAuthentication.SignIn(signInRequest).Result);
+            }
+            else
+            {
+                IList<ValidationFailure> validationFailureMessages = result.Errors;
+                return Ok(validationFailureMessages[0].ErrorMessage);
+            }
         }
 
         // PUT: api/Signin/5

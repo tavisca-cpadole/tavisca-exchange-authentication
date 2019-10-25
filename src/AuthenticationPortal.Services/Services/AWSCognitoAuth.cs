@@ -1,13 +1,16 @@
 ﻿using Amazon.CognitoIdentityProvider;
+using Authentication.Errors;
 using Authentication.Model;
+
 using System.Threading.Tasks;
 namespace Authentication.TokenAuthServices
 {
-    public class AWSCognitoAuth : ITokenAuthentication
+    public class AWSCognitoAuth : ITokenAuthenticator
     {
         static readonly Amazon.RegionEndpoint region = Amazon.RegionEndpoint.APSouth1;
         TokenAuthenticationResponse tokenAuthenticationResponse = new TokenAuthenticationResponse();
-        public async Task<TokenAuthenticationResponse> AuthenticateToken(AccessToken token)
+
+        public async Task<TokenAuthenticationResponse> AuthenticateToken(Token token)
         {
             AmazonCognitoIdentityProviderClient aws =
                 new AmazonCognitoIdentityProviderClient(
@@ -22,7 +25,7 @@ namespace Authentication.TokenAuthServices
             }
             catch
             {
-                throw new InvalidTokenException("Invalid Access Token");
+                throw new CustomException(802);
             }
         }
 

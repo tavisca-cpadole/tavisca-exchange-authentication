@@ -14,6 +14,7 @@
     <PackageReference Include="AWSSDK.Extensions.CognitoAuthentication" Version="0.9.4" />
     <PackageReference Include="AWSSDK.SecurityToken" Version="3.3.103.1" />
     <PackageReference Include="FluentValidation" Version="8.5.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.5.0" />
   </ItemGroup>
 
 </Project>

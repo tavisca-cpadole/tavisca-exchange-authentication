@@ -1,6 +1,7 @@
 ﻿using Amazon.CognitoIdentityProvider;
 using Amazon.CognitoIdentityProvider.Model;
 using Amazon.Extensions.CognitoAuthentication;
+using Authentication.Errors;
 using Authentication.Model;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
@@ -9,8 +10,8 @@ namespace Authentication.Services
 {
     public class AwsCognito : IUserAuthentication
     {
-        private readonly Settings _settings;
-        public AwsCognito(IOptions<Settings> settings)
+        private readonly AwsCognitoCredentials _settings;
+        public AwsCognito(IOptions<AwsCognitoCredentials> settings)
         {
             _settings = settings.Value;
         }
@@ -51,11 +52,10 @@ namespace Authentication.Services
                     _signInResponse.RefreshToken = authResponse.AuthenticationResult.RefreshToken;
                 _signInResponse.AccessToken = authResponse.AuthenticationResult.AccessToken;
 
-
             }
             catch
             {
-                throw new UnauthorizedCustomException("Invalid Username/Password");
+                throw new CustomException(801);
             }
 
             return _signInResponse;
