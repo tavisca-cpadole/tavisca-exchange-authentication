@@ -1,5 +1,4 @@
 ﻿using Authentication.Errors;
-using AuthenticationPortal.Errors;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
@@ -34,9 +33,9 @@ namespace Authentication
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             var response = context.Response;
-            var customException = exception.InnerException as BaseException;
+            var customException = exception as BaseException;
             var statusCode = (int)HttpStatusCode.InternalServerError;
-            var message = CustomErrorCodes.getErrorMessage(801);
+            var message = "Unexpected Error Occured";
 
             if (customException != null)
             {

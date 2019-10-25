@@ -1,6 +1,6 @@
-﻿namespace AuthenticationPortal.Contracts
+﻿namespace AuthenticationPortal.Web
 {
-    public class SignInResponse
+    public class SignInWebResponse
     {
         public string AccessToken { get; set; }
 
@@ -8,5 +8,7 @@
 
         public string UserId { get; set; }
 
+
     }
+
 }

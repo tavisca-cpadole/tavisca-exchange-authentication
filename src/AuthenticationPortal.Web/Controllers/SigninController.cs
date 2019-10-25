@@ -1,8 +1,10 @@
 ﻿using Authentication.Services;
-using AuthenticationPortal.Web.Validations;
-using FluentValidation.Results;
+using AuthenticationPortal.Contracts;
+using AuthenticationPortal.Web;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Authentication.Controllers
@@ -12,10 +14,11 @@ namespace Authentication.Controllers
     public class SigninController : ControllerBase
     {
         private readonly IUserAuthentication _userAuthentication;
-        private readonly SignInRequestValidator _requestValidation = new SignInRequestValidator();
-        public SigninController(IUserAuthentication userAuthentication)
+        private readonly IValidator<SignInRequest> _validator;
+        public SigninController(IUserAuthentication userAuthentication, IValidator<SignInRequest> validator)
         {
             _userAuthentication = userAuthentication;
+            _validator = validator;
         }
 
         // GET: api/Signin       
@@ -36,15 +39,22 @@ namespace Authentication.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(SignInRequest signInRequest)
         {
-            var result = _requestValidation.Validate(signInRequest);
+            SignInRequest request = new SignInRequest();
+            request.Password = signInRequest.Password;
+            request.RememberMe = signInRequest.RememberMe;
+            request.Username = signInRequest.Username;
+
+            var result = _validator.Validate(request);
+
             if (result.IsValid)
             {
-                return Ok(_userAuthentication.SignIn(signInRequest).Result);
+                var serviceResponse = await (_userAuthentication.SignIn(request));
+                return Ok(serviceResponse.ToSignInWebResponse());
             }
             else
             {
-                IList<ValidationFailure> validationFailureMessages = result.Errors;
-                return Ok(validationFailureMessages[0].ErrorMessage);
+                var msg = result.Errors.FirstOrDefault().ErrorMessage;
+                return Ok(msg);
             }
         }
 

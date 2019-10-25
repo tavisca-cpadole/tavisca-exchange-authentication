@@ -1,6 +1,7 @@
 ﻿using Amazon.CognitoIdentityProvider;
 using Authentication.Errors;
 using Authentication.Model;
+using AuthenticationPortal.Contracts;
 
 using System.Threading.Tasks;
 namespace Authentication.TokenAuthServices
@@ -28,6 +29,5 @@ namespace Authentication.TokenAuthServices
                 throw new CustomException(802);
             }
         }
-
     }
 }

@@ -1,19 +1,16 @@
-﻿using Authentication;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace AuthenticationPortal.Web.Validations
 {
-    public class SignInRequestValidator : AbstractValidator<SignInRequest>
+    public class SignInRequestValidator : AbstractValidator<Contracts.SignInRequest>
     {
         public SignInRequestValidator()
         {
             RuleFor(x => x.Username)
-           .NotNull()
-           .WithErrorCode("400")
-           .WithMessage("Username cannot be null")
-           .NotEmpty()
-           .WithErrorCode("400")
-           .WithMessage("Username cannot be blank.");
+            .NotNull()
+            .NotEmpty()
+            .WithErrorCode("400")
+            .WithMessage("Username cannot be Blank");
 
             RuleFor(x => x.Password)
             .NotEmpty()
@@ -23,7 +20,6 @@ namespace AuthenticationPortal.Web.Validations
             .MinimumLength(6)
             .WithErrorCode("400")
             .WithMessage("Invalid Password");
-
         }
     }
 }

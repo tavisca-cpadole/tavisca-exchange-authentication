@@ -1,8 +1,8 @@
 ﻿using System.Net;
 
-namespace AuthenticationPortal.Contracts
+namespace AuthenticationPortal.Web
 {
-    public class TokenAuthenticationResponse
+    public class TokenAuthWebResponse
     {
         public HttpStatusCode AuthenticationStatusCode { get; set; }
     }

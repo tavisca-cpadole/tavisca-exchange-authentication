@@ -2,7 +2,7 @@
 using Amazon.CognitoIdentityProvider.Model;
 using Amazon.Extensions.CognitoAuthentication;
 using Authentication.Errors;
-using Authentication.Model;
+using AuthenticationPortal.Contracts;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 
@@ -25,9 +25,9 @@ namespace Authentication.Services
 
         public async Task<SignInResponse> SignIn(SignInRequest signInRequest)
         {
-            AmazonCognitoIdentityProviderClient providerClient =
-                new AmazonCognitoIdentityProviderClient(
-                    new Amazon.Runtime.AnonymousAWSCredentials(), region);
+            var anonymousAwsCredentials = new Amazon.Runtime.AnonymousAWSCredentials();
+            var amazonCognitoIdentityProviderClient = new AmazonCognitoIdentityProviderClient(anonymousAwsCredentials, region);
+            AmazonCognitoIdentityProviderClient providerClient = amazonCognitoIdentityProviderClient;
 
             CognitoUserPool userPool = new CognitoUserPool(_settings.PoolId, _settings.ClientId, providerClient);
             CognitoUser cognitoUser = new CognitoUser(signInRequest.Username, _settings.ClientId, userPool, providerClient);
@@ -36,12 +36,9 @@ namespace Authentication.Services
             {
                 Password = signInRequest.Password
             };
-
-            AuthFlowResponse authResponse = null;
             try
             {
-
-                authResponse = await cognitoUser.StartWithSrpAuthAsync(authRequest).ConfigureAwait(false);
+                AuthFlowResponse authResponse = await cognitoUser.StartWithSrpAuthAsync(authRequest).ConfigureAwait(false);
                 GetUserRequest getUserRequest = new GetUserRequest();
                 getUserRequest.AccessToken = authResponse.AuthenticationResult.AccessToken;
                 GetUserResponse getUser = await providerClient.GetUserAsync(getUserRequest);

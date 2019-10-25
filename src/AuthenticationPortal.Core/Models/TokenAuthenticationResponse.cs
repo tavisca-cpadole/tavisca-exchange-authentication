@@ -2,7 +2,7 @@
 
 namespace Authentication.Model
 {
-    public class TokenAuthResponse
+    public class TokenAuthenticationResponse
     {
         public HttpStatusCode AuthenticationStatusCode { get; set; }
     }

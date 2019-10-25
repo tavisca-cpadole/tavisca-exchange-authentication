@@ -1,7 +1,10 @@
 using Authentication;
 using Authentication.Services;
 using Authentication.TokenAuthServices;
+using AuthenticationPortal.Contracts;
+using AuthenticationPortal.Web.Validations;
 using Autofac;
+using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -40,7 +43,7 @@ namespace AuthenticationPortal.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddSingleton<IValidator<SignInRequest>, SignInRequestValidator>();
 
 
         }

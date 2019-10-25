@@ -1,6 +1,7 @@
 ﻿using Authentication.Errors;
 using Authentication.Model;
 using Authentication.TokenAuthServices;
+using AuthenticationPortal.Web;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using System.Linq;
@@ -22,13 +23,12 @@ namespace Authentication.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-
-            StringValues x = default;
-
+            StringValues x;
             if (Request.Headers.TryGetValue("AuthKey", out x))
             {
-                Token token = new Token() { TokenString = x.First<string>() };
-                return Ok(tokenAuthentication.AuthenticateToken(token).Result);
+                Token token = new Token() { TokenString = x.First() };
+                var serviceResponse = tokenAuthentication.AuthenticateToken(token).Result;
+                return Ok(serviceResponse.ToTokenAuthWebResponse());
             }
             else
             {

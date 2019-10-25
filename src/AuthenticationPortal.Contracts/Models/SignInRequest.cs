@@ -1,4 +1,4 @@
-﻿namespace Authentication
+﻿namespace AuthenticationPortal.Contracts
 {
     public class SignInRequest
     {

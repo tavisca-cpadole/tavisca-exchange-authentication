@@ -1,4 +1,4 @@
-﻿using Authentication.Model;
+﻿using AuthenticationPortal.Contracts;
 using System.Threading.Tasks;
 
 namespace Authentication.Services
