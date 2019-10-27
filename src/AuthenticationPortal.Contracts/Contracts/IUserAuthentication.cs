@@ -1,7 +1,6 @@
-﻿using AuthenticationPortal.Contracts;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-namespace Authentication.Services
+namespace AuthenticationPortal.Contracts
 {
     public interface IUserAuthentication
     {

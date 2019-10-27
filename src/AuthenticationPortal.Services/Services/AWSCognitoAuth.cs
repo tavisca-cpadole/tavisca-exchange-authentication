@@ -1,17 +1,15 @@
 ﻿using Amazon.CognitoIdentityProvider;
 using Authentication.Errors;
 using Authentication.Model;
-using AuthenticationPortal.Contracts;
-
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 namespace Authentication.TokenAuthServices
 {
-    public class AWSCognitoAuth : ITokenAuthenticator
+    public class AWSCognitoAuth : ControllerBase, ITokenAuthenticator
     {
         static readonly Amazon.RegionEndpoint region = Amazon.RegionEndpoint.APSouth1;
-        TokenAuthenticationResponse tokenAuthenticationResponse = new TokenAuthenticationResponse();
 
-        public async Task<TokenAuthenticationResponse> AuthenticateToken(Token token)
+        public async Task<IActionResult> AuthenticateToken(Token token)
         {
             AmazonCognitoIdentityProviderClient aws =
                 new AmazonCognitoIdentityProviderClient(
@@ -19,10 +17,8 @@ namespace Authentication.TokenAuthServices
 
             try
             {
-
                 var user = await aws.GetUserAsync(new Amazon.CognitoIdentityProvider.Model.GetUserRequest() { AccessToken = token.TokenString });
-                tokenAuthenticationResponse.AuthenticationStatusCode = user.HttpStatusCode;
-                return tokenAuthenticationResponse;
+                return Ok();
             }
             catch
             {

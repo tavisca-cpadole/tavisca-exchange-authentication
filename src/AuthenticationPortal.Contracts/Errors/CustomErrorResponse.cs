@@ -1,4 +1,4 @@
-﻿namespace Authentication.Errors
+﻿namespace AuthenticationPortal.Contracts
 {
     public class CustomErrorResponse
     {

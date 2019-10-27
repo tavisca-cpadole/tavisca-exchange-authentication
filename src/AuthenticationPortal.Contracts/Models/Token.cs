@@ -1,5 +1,5 @@
 ﻿
-namespace Authentication.Model
+namespace AuthenticationPortal.Contracts
 {
     public class Token
     {

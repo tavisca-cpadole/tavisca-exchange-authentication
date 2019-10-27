@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace AuthenticationPortal.Web.Validations
+namespace AuthenticationPortal.Web
 {
     public class SignInRequestValidator : AbstractValidator<Contracts.SignInRequest>
     {

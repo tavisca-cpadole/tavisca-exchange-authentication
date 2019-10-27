@@ -1,13 +1,10 @@
-﻿using Authentication.Errors;
-using Authentication.Model;
-using Authentication.TokenAuthServices;
-using AuthenticationPortal.Web;
+﻿using AuthenticationPortal.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using System.Linq;
 
 
-namespace Authentication.Controllers
+namespace AuthenticationPortal.Web
 {
     [Route("api/[controller]")]
     public class TokenAuthController : Controller
@@ -26,9 +23,8 @@ namespace Authentication.Controllers
             StringValues x;
             if (Request.Headers.TryGetValue("AuthKey", out x))
             {
-                Token token = new Token() { TokenString = x.First() };
-                var serviceResponse = tokenAuthentication.AuthenticateToken(token).Result;
-                return Ok(serviceResponse.ToTokenAuthWebResponse());
+                Token token = new Token() { TokenString = x.First() }; ;
+                return tokenAuthentication.AuthenticateToken(token).Result;
             }
             else
             {

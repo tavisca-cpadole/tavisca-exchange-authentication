@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Authentication.Errors
+namespace AuthenticationPortal.Contracts
 {
     [Serializable]
     public class BaseException : Exception

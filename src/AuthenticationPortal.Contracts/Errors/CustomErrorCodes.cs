@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Resources;
 
-namespace AuthenticationPortal.Errors
+namespace AuthenticationPortal.Contracts
 {
     public static class CustomErrorCodes
     {

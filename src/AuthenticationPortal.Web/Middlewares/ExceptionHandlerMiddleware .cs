@@ -1,11 +1,11 @@
-﻿using Authentication.Errors;
+﻿using AuthenticationPortal.Contracts;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Authentication
+namespace AuthenticationPortal.Web
 {
     // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
 

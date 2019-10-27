@@ -1,13 +1,11 @@
-﻿using Authentication.Services;
-using AuthenticationPortal.Contracts;
-using AuthenticationPortal.Web;
+﻿using AuthenticationPortal.Contracts;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Authentication.Controllers
+namespace AuthenticationPortal.Web
 {
     [Route("api/v1.0/ORP/[controller]")]
     [ApiController]

@@ -1,6 +1,4 @@
-﻿using AuthenticationPortal.Errors;
-
-namespace Authentication.Errors
+﻿namespace AuthenticationPortal.Contracts
 {
     public class CustomException : BaseException
     {

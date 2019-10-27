@@ -1,11 +1,11 @@
 ﻿using Authentication.Model;
-using AuthenticationPortal.Contracts;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Authentication.TokenAuthServices
+namespace AuthenticationPortal.Contracts
 {
     public interface ITokenAuthenticator
     {
-        Task<TokenAuthenticationResponse> AuthenticateToken(Token token);
+        Task<IActionResult> AuthenticateToken(Token token);
     }
 }
