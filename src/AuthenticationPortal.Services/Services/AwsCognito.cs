@@ -1,12 +1,11 @@
 ﻿using Amazon.CognitoIdentityProvider;
 using Amazon.CognitoIdentityProvider.Model;
 using Amazon.Extensions.CognitoAuthentication;
-using Authentication.Errors;
 using AuthenticationPortal.Contracts;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 
-namespace Authentication.Services
+namespace AuthenticationPortal.Services
 {
     public class AwsCognito : IUserAuthentication
     {

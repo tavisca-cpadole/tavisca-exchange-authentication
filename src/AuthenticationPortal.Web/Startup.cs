@@ -1,8 +1,5 @@
-using Authentication;
-using Authentication.Services;
-using Authentication.TokenAuthServices;
 using AuthenticationPortal.Contracts;
-using AuthenticationPortal.Web.Validations;
+using AuthenticationPortal.Services;
 using Autofac;
 using FluentValidation;
 using Microsoft.AspNetCore.Builder;

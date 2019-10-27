@@ -1,5 +1,4 @@
-﻿using Authentication.Model;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace AuthenticationPortal.Contracts

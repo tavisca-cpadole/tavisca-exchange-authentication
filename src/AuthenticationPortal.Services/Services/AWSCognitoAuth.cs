@@ -1,9 +1,8 @@
 ﻿using Amazon.CognitoIdentityProvider;
-using Authentication.Errors;
-using Authentication.Model;
+using AuthenticationPortal.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-namespace Authentication.TokenAuthServices
+namespace AuthenticationPortal.Services
 {
     public class AWSCognitoAuth : ControllerBase, ITokenAuthenticator
     {
