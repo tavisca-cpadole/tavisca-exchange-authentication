@@ -22,14 +22,14 @@ namespace AuthenticationPortal.Contracts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ErrorCodes {
+    internal class ErrorMessages {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ErrorCodes() {
+        internal ErrorMessages() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AuthenticationPortal.Contracts {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AuthenticationPortal.Contracts.ErrorCodes", typeof(ErrorCodes).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AuthenticationPortal.Contracts.ErrorMessages", typeof(ErrorMessages).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} cannot be Blank.
+        ///   Looks up a localized string similar to 804.
         /// </summary>
         internal static string Blank_Field_Error {
             get {
@@ -70,7 +70,7 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid {0} Length.
+        ///   Looks up a localized string similar to 805.
         /// </summary>
         internal static string Invalid_Length_Error {
             get {
@@ -79,7 +79,7 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid Username/Password.
+        ///   Looks up a localized string similar to 801.
         /// </summary>
         internal static string Login_Error {
             get {
@@ -88,7 +88,7 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} cannot be null.
+        ///   Looks up a localized string similar to 806.
         /// </summary>
         internal static string Null_Field_Error {
             get {
@@ -97,7 +97,7 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Header is missing the AuthKey Field.
+        ///   Looks up a localized string similar to 803.
         /// </summary>
         internal static string Token_Request_Error {
             get {
@@ -106,7 +106,7 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid Access Token.
+        ///   Looks up a localized string similar to 802.
         /// </summary>
         internal static string Token_Validation_Error {
             get {
@@ -115,7 +115,7 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Following Validation Errors Occured.
+        ///   Looks up a localized string similar to 807.
         /// </summary>
         internal static string Validation_Error {
             get {

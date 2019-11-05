@@ -71,8 +71,9 @@ namespace AuthenticationPortal.Web
         public void ConfigureContainer(ContainerBuilder builder)
         {
             //configure auto fac here
-            builder.RegisterType<AwsCognito>().As<IUserAuthentication>();
+            builder.RegisterType<AwsCognito>().As<IUserAuthenticationAdapter>();
             builder.RegisterType<AWSCognitoAuth>().As<ITokenAuthenticator>();
+            builder.RegisterType<UserAuthenticationService>().As<IUserAuthenticationService>();
         }
     }
 }

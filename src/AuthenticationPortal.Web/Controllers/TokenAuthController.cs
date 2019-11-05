@@ -2,11 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using System.Linq;
-
+using System.Net;
+using System.Threading.Tasks;
 
 namespace AuthenticationPortal.Web
 {
-    [Route("api/[controller]")]
+    [Route("api/v1.0/ORP/[controller]")]
     public class TokenAuthController : Controller
     {
         private readonly ITokenAuthenticator tokenAuthentication;
@@ -15,47 +16,22 @@ namespace AuthenticationPortal.Web
             this.tokenAuthentication = tokenAuthentication;
         }
 
-
         // GET: api/<controller>
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> TryTokenValidation()
         {
             StringValues x;
             if (Request.Headers.TryGetValue("AuthKey", out x))
             {
-                Token token = new Token() { TokenString = x.First() }; ;
-                return tokenAuthentication.AuthenticateToken(token).Result;
+                Token token = new Token() { TokenKey = x.First() };
+                await tokenAuthentication.AuthenticateTokenAsync(token);
+                return Ok();
             }
             else
             {
-                throw new CustomException(803);
+                throw new CustomException(HttpStatusCode.BadRequest, "Token Request Error");
             }
 
-        }
-
-        // GET api/<controller>/5
-        [HttpGet("{id}")]
-        public string Get(string token)
-        {
-            return "value";
-        }
-
-        // POST api/<controller>
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

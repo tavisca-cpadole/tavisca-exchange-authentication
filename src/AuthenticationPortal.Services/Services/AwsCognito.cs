@@ -3,11 +3,12 @@ using Amazon.CognitoIdentityProvider.Model;
 using Amazon.Extensions.CognitoAuthentication;
 using AuthenticationPortal.Contracts;
 using Microsoft.Extensions.Options;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace AuthenticationPortal.Services
 {
-    public class AwsCognito : IUserAuthentication
+    public class AwsCognito : IUserAuthenticationAdapter
     {
         private readonly AwsCognitoCredentials _settings;
         public AwsCognito(IOptions<AwsCognitoCredentials> settings)
@@ -22,7 +23,7 @@ namespace AuthenticationPortal.Services
         static Amazon.RegionEndpoint region = Amazon.RegionEndpoint.APSouth1;
         private SignInResponse _signInResponse = new SignInResponse();
 
-        public async Task<SignInResponse> SignIn(SignInRequest signInRequest)
+        public async Task<SignInResponse> SignInAsync(SignInRequest signInRequest)
         {
             var anonymousAwsCredentials = new Amazon.Runtime.AnonymousAWSCredentials();
             var amazonCognitoIdentityProviderClient = new AmazonCognitoIdentityProviderClient(anonymousAwsCredentials, region);
@@ -51,7 +52,7 @@ namespace AuthenticationPortal.Services
             }
             catch
             {
-                throw new CustomException(801);
+                throw new CustomException(HttpStatusCode.Unauthorized, "Login Error");
             }
 
             return _signInResponse;

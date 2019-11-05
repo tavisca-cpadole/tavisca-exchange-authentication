@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 
 namespace AuthenticationPortal.Web
 {
-    // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
-
     public class CustomExceptionMiddleware
     {
         private readonly RequestDelegate _next;
@@ -34,22 +32,25 @@ namespace AuthenticationPortal.Web
         {
             var response = context.Response;
             var customException = exception as BaseException;
-            var statusCode = (int)HttpStatusCode.InternalServerError;
-            var message = "Unexpected Error Occured";
+            int StatusCode = (int)HttpStatusCode.InternalServerError;
+            CustomErrorResponse customErrorResponse = new CustomErrorResponse()
+            {
+                Code = StatusCode,
+                Message = "Unexpected Error Occured"
+            };
 
             if (customException != null)
             {
-                message = customException.Message;
-                statusCode = customException.Code;
+                customErrorResponse.Message = customException.Message;
+                customErrorResponse.Code = customException.Code;
+                StatusCode = (int)customException.StatusCode;
+                customErrorResponse.Info = customException.Info;
             }
 
             response.ContentType = "application/json";
-            response.StatusCode = (int)HttpStatusCode.BadRequest;
-            return response.WriteAsync(JsonConvert.SerializeObject(new CustomErrorResponse
-            {
-                Code = statusCode,
-                Message = message
-            }));
+            response.StatusCode = StatusCode;
+
+            return response.WriteAsync(JsonConvert.SerializeObject(customErrorResponse, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
         }
     }
 }

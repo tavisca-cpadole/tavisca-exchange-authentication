@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net;
 
 namespace AuthenticationPortal.Contracts
 {
@@ -7,11 +9,14 @@ namespace AuthenticationPortal.Contracts
     {
         public int Code { get; set; }
         public string Message { get; set; }
-
-        public BaseException(string message, int code) : base(message)
+        public List<ErrorInfo> Info { get; set; }
+        public HttpStatusCode StatusCode { get; set; }
+        public BaseException(string message, int code, List<ErrorInfo> info, HttpStatusCode statusCode) : base(message)
         {
             Code = code;
             Message = message;
+            Info = info;
+            StatusCode = statusCode;
         }
     }
 }

@@ -18,9 +18,8 @@ namespace ApplicationPortal.Tests
                 RememberMe = false,
                 Username = "chinmay"
             };
-
-            AwsCognito awsCognito = new AwsCognito();
-            Exception ex = await Assert.ThrowsAsync<CustomException>(() => awsCognito.SignIn(signInRequest));
+            IUserAuthenticationAdapter userAuthentication = new AwsCognito();
+            Exception ex = await Assert.ThrowsAsync<CustomException>(() => userAuthentication.SignInAsync(signInRequest));
             Assert.Equal("Invalid Username/Password", ex.Message);
         }
     }
