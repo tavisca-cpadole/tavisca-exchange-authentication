@@ -5,19 +5,19 @@ using System.Net;
 using System.Threading.Tasks;
 namespace AuthenticationPortal.Services
 {
-    public class AWSCognitoAuth : ControllerBase, ITokenAuthenticator
+    public class AWSCognitoAuth : ControllerBase, ITokenAuthenticatorAdapter
     {
         static readonly Amazon.RegionEndpoint region = Amazon.RegionEndpoint.APSouth1;
 
-        public async Task AuthenticateTokenAsync(Token token)
+        public async Task AuthenticateTokenAsync(TokenAuthenticationRequest token)
         {
-            AmazonCognitoIdentityProviderClient aws =
-                new AmazonCognitoIdentityProviderClient(
-                    new Amazon.Runtime.AnonymousAWSCredentials(), region);
+            var anonymousAwsCredentials = new Amazon.Runtime.AnonymousAWSCredentials();
+            var amazonCognitoIdentityProviderClient = new AmazonCognitoIdentityProviderClient(anonymousAwsCredentials, region);
+            AmazonCognitoIdentityProviderClient providerClient = amazonCognitoIdentityProviderClient;
 
             try
             {
-                var user = await aws.GetUserAsync(new Amazon.CognitoIdentityProvider.Model.GetUserRequest() { AccessToken = token.TokenKey });
+                var user = await providerClient.GetUserAsync(new Amazon.CognitoIdentityProvider.Model.GetUserRequest() { AccessToken = token.AccessToken });
                 return;
             }
             catch

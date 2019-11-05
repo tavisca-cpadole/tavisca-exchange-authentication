@@ -22,9 +22,9 @@ namespace AuthenticationPortal.Web
         public async Task<IActionResult> SignInAsync(SignInRequest signInRequest)
         {
             var request = signInRequest.ToEntity();
-            _validator.EnsureValid(request);
+            _validator.EnsureSignInRequestValidity(request);
             var serviceResponse = await (userAuthenticationService.SignInAsync(request));
-            return Ok(serviceResponse.ToModel());
+            return Ok(signInRequest);
 
         }
     }

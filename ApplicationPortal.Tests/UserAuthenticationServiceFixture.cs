@@ -8,10 +8,10 @@ namespace ApplicationPortal.Tests
 {
     public class UserAuthenticationServiceFixture
     {
-        private readonly IUserAuthenticationAdapter _userAuthenticationAdapter;
-        public UserAuthenticationServiceFixture(IUserAuthenticationAdapter userAuthenticationAdapter)
+        private readonly IUserAuthenticationService _userAuthenticationService;
+        public UserAuthenticationServiceFixture(IUserAuthenticationService userAuthenticationService)
         {
-            _userAuthenticationAdapter = userAuthenticationAdapter;
+            _userAuthenticationService = userAuthenticationService;
         }
         [Fact]
         public async Task Sign_In_Service_Should_Not_Give_Token_To_Invalid_User()
@@ -22,7 +22,7 @@ namespace ApplicationPortal.Tests
                 RememberMe = false,
                 Username = "chinmay"
             };
-            Exception ex = await Assert.ThrowsAsync<CustomException>(() => _userAuthenticationAdapter.SignInAsync(signInRequest));
+            Exception ex = await Assert.ThrowsAsync<CustomException>(() => _userAuthenticationService.SignInAsync(signInRequest));
             Assert.Equal("Invalid Username/Password", ex.Message);
         }
     }

@@ -41,6 +41,7 @@ namespace AuthenticationPortal.Web
             });
 
             services.AddSingleton<IValidator<SignInRequest>, SignInRequestValidator>();
+            services.AddSingleton<IValidator<TokenAuthenticationRequest>, TokenAuthenticationRequestValidator>();
 
 
         }
@@ -72,8 +73,9 @@ namespace AuthenticationPortal.Web
         {
             //configure auto fac here
             builder.RegisterType<AwsCognito>().As<IUserAuthenticationAdapter>();
-            builder.RegisterType<AWSCognitoAuth>().As<ITokenAuthenticator>();
+            builder.RegisterType<AWSCognitoAuth>().As<ITokenAuthenticatorAdapter>();
             builder.RegisterType<UserAuthenticationService>().As<IUserAuthenticationService>();
+            builder.RegisterType<TokenAuthenticationService>().As<ITokenAuthenticationService>();
         }
     }
 }
