@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 namespace AuthenticationPortal.Web
 {
-    [Route("api/v1.0/ORP/[controller]")]
+    [Route("api/v1.0/ORP")]
     [ApiController]
     public class SigninController : ControllerBase
     {
@@ -18,8 +18,8 @@ namespace AuthenticationPortal.Web
         }
 
         // POST: api/Signin
-        [HttpPost]
-        public async Task<IActionResult> SignIn(SignInRequest signInRequest)
+        [HttpPost("signin")]
+        public async Task<IActionResult> SignInAsync(SignInRequest signInRequest)
         {
             SignInRequest request = new SignInRequest();
             request.Password = signInRequest.Password;

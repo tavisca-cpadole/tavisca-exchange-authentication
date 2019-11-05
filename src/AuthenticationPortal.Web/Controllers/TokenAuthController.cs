@@ -17,8 +17,8 @@ namespace AuthenticationPortal.Web
         }
 
         // GET: api/<controller>
-        [HttpGet]
-        public async Task<IActionResult> TryTokenValidation()
+        [HttpGet("validateToken")]
+        public async Task<IActionResult> TryTokenValidationAsync()
         {
             StringValues x;
             if (Request.Headers.TryGetValue("AuthKey", out x))
