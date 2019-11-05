@@ -16,10 +16,6 @@ namespace AuthenticationPortal.Services
             _settings = settings.Value;
         }
 
-        public AwsCognito()
-        {
-        }
-
         static Amazon.RegionEndpoint region = Amazon.RegionEndpoint.APSouth1;
         private SignInResponse _signInResponse = new SignInResponse();
 

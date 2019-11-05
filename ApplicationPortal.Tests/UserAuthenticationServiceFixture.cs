@@ -1,14 +1,18 @@
 ﻿
 using AuthenticationPortal.Contracts;
-using AuthenticationPortal.Services;
 using System;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace ApplicationPortal.Tests
 {
-    public class AwsCogintoServiceFixture
+    public class UserAuthenticationServiceFixture
     {
+        private readonly IUserAuthenticationAdapter _userAuthenticationAdapter;
+        public UserAuthenticationServiceFixture(IUserAuthenticationAdapter userAuthenticationAdapter)
+        {
+            _userAuthenticationAdapter = userAuthenticationAdapter;
+        }
         [Fact]
         public async Task Sign_In_Service_Should_Not_Give_Token_To_Invalid_User()
         {
@@ -18,8 +22,7 @@ namespace ApplicationPortal.Tests
                 RememberMe = false,
                 Username = "chinmay"
             };
-            IUserAuthenticationAdapter userAuthentication = new AwsCognito();
-            Exception ex = await Assert.ThrowsAsync<CustomException>(() => userAuthentication.SignInAsync(signInRequest));
+            Exception ex = await Assert.ThrowsAsync<CustomException>(() => _userAuthenticationAdapter.SignInAsync(signInRequest));
             Assert.Equal("Invalid Username/Password", ex.Message);
         }
     }

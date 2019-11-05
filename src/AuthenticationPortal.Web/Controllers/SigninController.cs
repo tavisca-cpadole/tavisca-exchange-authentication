@@ -21,13 +21,10 @@ namespace AuthenticationPortal.Web
         [HttpPost("signin")]
         public async Task<IActionResult> SignInAsync(SignInRequest signInRequest)
         {
-            SignInRequest request = new SignInRequest();
-            request.Password = signInRequest.Password;
-            request.RememberMe = signInRequest.RememberMe;
-            request.Username = signInRequest.Username;
+            var request = signInRequest.ToEntity();
             _validator.EnsureValid(request);
-            var serviceResponse = await (userAuthenticationService.SignInAsync(signInRequest));
-            return Ok(serviceResponse.ToSignInWebResponse());
+            var serviceResponse = await (userAuthenticationService.SignInAsync(request));
+            return Ok(serviceResponse.ToModel());
 
         }
     }
