@@ -20,10 +20,5 @@ namespace AuthenticationPortal.Contracts
                                 Assembly.GetExecutingAssembly());
             return rm.GetString(errorMessage, CultureInfo.CurrentCulture);
         }
-
-        //public static CustomException GetException(string name)
-        //{
-        //    return new BaseException(ErrorCodes._801, ErrorMessages.Login_Error);
-        //}
     }
 }

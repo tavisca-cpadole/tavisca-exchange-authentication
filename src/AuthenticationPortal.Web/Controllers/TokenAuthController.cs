@@ -16,7 +16,6 @@ namespace AuthenticationPortal.Web
             _validator = validator;
         }
 
-        // POST: api/<controller>
         [HttpPost("validateToken")]
         public async Task<IActionResult> TryTokenValidationAsync([FromBody] TokenAuthenticationRequest tokenAuthenticationRequest)
         {

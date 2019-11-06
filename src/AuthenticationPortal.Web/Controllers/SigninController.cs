@@ -17,7 +17,6 @@ namespace AuthenticationPortal.Web
             _validator = validator;
         }
 
-        // POST: api/Signin
         [HttpPost("signin")]
         public async Task<IActionResult> SignInAsync(SignInRequest signInRequest)
         {
