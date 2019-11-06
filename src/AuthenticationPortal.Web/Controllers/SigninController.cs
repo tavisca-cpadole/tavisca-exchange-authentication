@@ -21,8 +21,8 @@ namespace AuthenticationPortal.Web
         [HttpPost("signin")]
         public async Task<IActionResult> SignInAsync(SignInRequest signInRequest)
         {
+            _validator.EnsureValid(signInRequest);
             var request = signInRequest.ToEntity();
-            _validator.EnsureSignInRequestValidity(request);
             var serviceResponse = await (userAuthenticationService.SignInAsync(request));
             return Ok(signInRequest);
 

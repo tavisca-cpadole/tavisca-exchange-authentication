@@ -20,8 +20,8 @@ namespace AuthenticationPortal.Web
         [HttpPost("validateToken")]
         public async Task<IActionResult> TryTokenValidationAsync([FromBody] TokenAuthenticationRequest tokenAuthenticationRequest)
         {
+            _validator.EnsureValid(tokenAuthenticationRequest);
             var request = tokenAuthenticationRequest.ToEntity();
-            _validator.EnsureSignInRequestValidity(request);
             await _tokenAuthenticationService.AuthenticateTokenAsync(request);
             return Ok(tokenAuthenticationRequest);
         }

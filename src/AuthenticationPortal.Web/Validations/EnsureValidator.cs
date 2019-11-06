@@ -7,7 +7,7 @@ namespace AuthenticationPortal.Web
 {
     public static class EnsureValidator
     {
-        public static void EnsureSignInRequestValidity<SignInRequest>(this IValidator<SignInRequest> validator, SignInRequest request)
+        public static void EnsureValid<SignInRequest>(this IValidator<SignInRequest> validator, SignInRequest request)
         {
             var validationResult = validator.Validate(request);
 
