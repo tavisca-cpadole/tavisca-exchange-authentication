@@ -41,7 +41,7 @@ namespace AuthenticationPortal.Web
 
             if (customException != null)
             {
-                customErrorResponse.Message = customException.Message;
+                customErrorResponse.Message = customException.Message + exception.Message;
                 customErrorResponse.Code = customException.Code;
                 StatusCode = (int)customException.StatusCode;
                 customErrorResponse.Info = customException.Info;

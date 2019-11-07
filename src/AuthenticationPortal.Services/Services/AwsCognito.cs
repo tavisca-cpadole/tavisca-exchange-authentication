@@ -39,8 +39,7 @@ namespace AuthenticationPortal.Services
                 getUserRequest.AccessToken = authResponse.AuthenticationResult.AccessToken;
                 GetUserResponse getUser = await providerClient.GetUserAsync(getUserRequest);
 
-                //we will retrieve user id from user table from our DB
-                _signInResponse.UserId = "12345";
+                _signInResponse.UserId = getUser.UserAttributes[0].Value;
                 if (signInRequest.RememberMe)
                     _signInResponse.RefreshToken = authResponse.AuthenticationResult.RefreshToken;
                 _signInResponse.AccessToken = authResponse.AuthenticationResult.AccessToken;

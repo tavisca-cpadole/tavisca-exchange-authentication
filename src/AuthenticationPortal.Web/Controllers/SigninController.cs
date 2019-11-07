@@ -23,7 +23,7 @@ namespace AuthenticationPortal.Web
             _validator.EnsureValid(signInRequest);
             var request = signInRequest.ToEntity();
             var serviceResponse = await (userAuthenticationService.SignInAsync(request));
-            return Ok(signInRequest);
+            return Ok(serviceResponse);
 
         }
     }
