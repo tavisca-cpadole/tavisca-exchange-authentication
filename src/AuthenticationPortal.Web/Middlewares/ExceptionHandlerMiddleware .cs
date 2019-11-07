@@ -36,12 +36,12 @@ namespace AuthenticationPortal.Web
             CustomErrorResponse customErrorResponse = new CustomErrorResponse()
             {
                 Code = StatusCode,
-                Message = "Unexpected Error Occured" + exception.Message
+                Message = "Unexpected Error Occured"
             };
 
             if (customException != null)
             {
-                customErrorResponse.Message = customException.Message + exception.Message;
+                customErrorResponse.Message = customException.Message;
                 customErrorResponse.Code = customException.Code;
                 StatusCode = (int)customException.StatusCode;
                 customErrorResponse.Info = customException.Info;

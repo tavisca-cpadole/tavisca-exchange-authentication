@@ -7,7 +7,7 @@ namespace AuthenticationPortal.Contracts
     {
         public CustomException(HttpStatusCode statusCode, string message, List<ErrorInfo> info = null) : base(ResourceHelper.getErrorData(message), int.Parse(ResourceHelper.getErrorCode(message)), info, statusCode)
         {
-          //  x sabas znKJJsns
+
         }
     }
 
