@@ -1,6 +1,6 @@
 ﻿
+using AuthenticationPortal.AwsExtension;
 using AuthenticationPortal.Contracts;
-using AuthenticationPortal.Services;
 using System;
 using System.Threading.Tasks;
 using Xunit;

@@ -3,7 +3,7 @@ using AuthenticationPortal.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Threading.Tasks;
-namespace AuthenticationPortal.Services
+namespace AuthenticationPortal.AwsExtension
 {
     public class AWSCognitoAuth : ControllerBase, ITokenAuthenticatorAdapter
     {
@@ -22,7 +22,7 @@ namespace AuthenticationPortal.Services
             }
             catch
             {
-                throw new CustomException(HttpStatusCode.Unauthorized, "Token Validation Error");
+                throw new CustomException(HttpStatusCode.Unauthorized, "Token_Validation_Error");
             }
         }
     }

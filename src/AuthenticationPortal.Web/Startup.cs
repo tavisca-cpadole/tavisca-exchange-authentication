@@ -1,3 +1,4 @@
+using AuthenticationPortal.AwsExtension;
 using AuthenticationPortal.Contracts;
 using AuthenticationPortal.Services;
 using Autofac;

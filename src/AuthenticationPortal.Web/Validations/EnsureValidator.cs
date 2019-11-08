@@ -18,7 +18,7 @@ namespace AuthenticationPortal.Web
                 {
                     _info.Add(new ErrorInfo() { Code = error.ErrorCode, Message = error.ErrorMessage });
                 }
-                throw new CustomException(HttpStatusCode.BadRequest, "Validation Error", _info);
+                throw new CustomException(HttpStatusCode.BadRequest, "Validation_Error", _info);
             }
         }
 

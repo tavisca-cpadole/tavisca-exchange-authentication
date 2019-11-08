@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace AuthenticationPortal.Services
+namespace AuthenticationPortal.AwsExtension
 {
     public class AwsCognito : IUserAuthenticationAdapter
     {
@@ -17,10 +17,10 @@ namespace AuthenticationPortal.Services
         }
 
         static Amazon.RegionEndpoint region = Amazon.RegionEndpoint.APSouth1;
-        private SignInResponse _signInResponse = new SignInResponse();
 
         public async Task<SignInResponse> SignInAsync(SignInRequest signInRequest)
         {
+            SignInResponse _signInResponse = new SignInResponse();
             var anonymousAwsCredentials = new Amazon.Runtime.AnonymousAWSCredentials();
             var amazonCognitoIdentityProviderClient = new AmazonCognitoIdentityProviderClient(anonymousAwsCredentials, region);
             AmazonCognitoIdentityProviderClient providerClient = amazonCognitoIdentityProviderClient;
@@ -35,10 +35,11 @@ namespace AuthenticationPortal.Services
             try
             {
                 AuthFlowResponse authResponse = await cognitoUser.StartWithSrpAuthAsync(authRequest).ConfigureAwait(false);
-                GetUserRequest getUserRequest = new GetUserRequest();
-                getUserRequest.AccessToken = authResponse.AuthenticationResult.AccessToken;
+                var getUserRequest = new GetUserRequest()
+                {
+                    AccessToken = authResponse.AuthenticationResult.AccessToken
+                };
                 GetUserResponse getUser = await providerClient.GetUserAsync(getUserRequest);
-
                 _signInResponse.UserId = getUser.UserAttributes[0].Value;
                 if (signInRequest.RememberMe)
                     _signInResponse.RefreshToken = authResponse.AuthenticationResult.RefreshToken;
@@ -47,7 +48,7 @@ namespace AuthenticationPortal.Services
             }
             catch
             {
-                throw new CustomException(HttpStatusCode.Unauthorized, "Login Error");
+                throw new CustomException(HttpStatusCode.Unauthorized, "Login_Error");
             }
 
             return _signInResponse;

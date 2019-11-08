@@ -117,25 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Blank Field Error" xml:space="preserve">
+  <data name="Blank_Field_Error" xml:space="preserve">
     <value>{0} cannot be Blank</value>
   </data>
-  <data name="Invalid Length Error" xml:space="preserve">
+  <data name="Invalid_Length_Error" xml:space="preserve">
     <value>Invalid {0} Length</value>
   </data>
-  <data name="Login Error" xml:space="preserve">
+  <data name="Login_Error" xml:space="preserve">
     <value>Invalid Username/Password</value>
   </data>
-  <data name="Null Field Error" xml:space="preserve">
+  <data name="Null_Field_Error" xml:space="preserve">
     <value>{0} cannot be null</value>
   </data>
-  <data name="Token Request Error" xml:space="preserve">
+  <data name="Server_Error" xml:space="preserve">
+    <value>Unexpected Error Occured, Please Refer the Logs</value>
+  </data>
+  <data name="Token_Request_Error" xml:space="preserve">
     <value>Header is missing the AuthKey Field</value>
   </data>
-  <data name="Token Validation Error" xml:space="preserve">
+  <data name="Token_Validation_Error" xml:space="preserve">
     <value>Invalid Access Token</value>
   </data>
-  <data name="Validation Error" xml:space="preserve">
+  <data name="Validation_Error" xml:space="preserve">
     <value>Following Validation Errors Occured</value>
   </data>
 </root>

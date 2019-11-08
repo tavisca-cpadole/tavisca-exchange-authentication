@@ -24,7 +24,6 @@ namespace AuthenticationPortal.Web
             var request = signInRequest.ToEntity();
             var serviceResponse = await (userAuthenticationService.SignInAsync(request));
             return Ok(serviceResponse);
-
         }
     }
 }

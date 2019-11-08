@@ -65,7 +65,7 @@ namespace AuthenticationPortal.Contracts {
         /// </summary>
         internal static string Blank_Field_Error {
             get {
-                return ResourceManager.GetString("Blank Field Error", resourceCulture);
+                return ResourceManager.GetString("Blank_Field_Error", resourceCulture);
             }
         }
         
@@ -74,7 +74,7 @@ namespace AuthenticationPortal.Contracts {
         /// </summary>
         internal static string Invalid_Length_Error {
             get {
-                return ResourceManager.GetString("Invalid Length Error", resourceCulture);
+                return ResourceManager.GetString("Invalid_Length_Error", resourceCulture);
             }
         }
         
@@ -83,7 +83,7 @@ namespace AuthenticationPortal.Contracts {
         /// </summary>
         internal static string Login_Error {
             get {
-                return ResourceManager.GetString("Login Error", resourceCulture);
+                return ResourceManager.GetString("Login_Error", resourceCulture);
             }
         }
         
@@ -92,7 +92,16 @@ namespace AuthenticationPortal.Contracts {
         /// </summary>
         internal static string Null_Field_Error {
             get {
-                return ResourceManager.GetString("Null Field Error", resourceCulture);
+                return ResourceManager.GetString("Null_Field_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 808.
+        /// </summary>
+        internal static string Server_Error {
+            get {
+                return ResourceManager.GetString("Server_Error", resourceCulture);
             }
         }
         
@@ -101,7 +110,7 @@ namespace AuthenticationPortal.Contracts {
         /// </summary>
         internal static string Token_Request_Error {
             get {
-                return ResourceManager.GetString("Token Request Error", resourceCulture);
+                return ResourceManager.GetString("Token_Request_Error", resourceCulture);
             }
         }
         
@@ -110,7 +119,7 @@ namespace AuthenticationPortal.Contracts {
         /// </summary>
         internal static string Token_Validation_Error {
             get {
-                return ResourceManager.GetString("Token Validation Error", resourceCulture);
+                return ResourceManager.GetString("Token_Validation_Error", resourceCulture);
             }
         }
         
@@ -119,7 +128,7 @@ namespace AuthenticationPortal.Contracts {
         /// </summary>
         internal static string Validation_Error {
             get {
-                return ResourceManager.GetString("Validation Error", resourceCulture);
+                return ResourceManager.GetString("Validation_Error", resourceCulture);
             }
         }
     }

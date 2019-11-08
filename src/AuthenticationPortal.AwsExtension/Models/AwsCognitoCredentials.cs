@@ -1,4 +1,4 @@
-﻿namespace AuthenticationPortal.Contracts
+﻿namespace AuthenticationPortal.AwsExtension
 {
     public class AwsCognitoCredentials
     {

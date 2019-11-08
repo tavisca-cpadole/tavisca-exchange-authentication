@@ -35,8 +35,8 @@ namespace AuthenticationPortal.Web
             int StatusCode = (int)HttpStatusCode.InternalServerError;
             CustomErrorResponse customErrorResponse = new CustomErrorResponse()
             {
-                Code = StatusCode,
-                Message = "Unexpected Error Occured"
+                Code = int.Parse(ResourceHelper.getErrorCode("Server_Error")),
+                Message = ResourceHelper.getErrorData("Server_Error")
             };
 
             if (customException != null)

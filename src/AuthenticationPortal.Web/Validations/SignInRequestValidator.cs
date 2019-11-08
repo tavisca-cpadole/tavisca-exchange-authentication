@@ -10,20 +10,20 @@ namespace AuthenticationPortal.Web
             RuleFor(x => x.Username)
             .Cascade(CascadeMode.StopOnFirstFailure)
             .NotNull()
-            .WithErrorCode(ResourceHelper.getErrorCode("Null Field Error"))
-            .WithMessage(ResourceHelper.getErrorData("Null Field Error", "Username"))
+            .WithErrorCode(ResourceHelper.getErrorCode("Null_Field_Error"))
+            .WithMessage(ResourceHelper.getErrorData("Null_Field_Error", "Username"))
             .NotEmpty()
-            .WithErrorCode(ResourceHelper.getErrorCode("Blank Field Error"))
-            .WithMessage(ResourceHelper.getErrorData("Blank Field Error", "Username"));
+            .WithErrorCode(ResourceHelper.getErrorCode("Blank_Field_Error"))
+            .WithMessage(ResourceHelper.getErrorData("Blank_Field_Error", "Username"));
 
             RuleFor(x => x.Password)
             .Cascade(CascadeMode.StopOnFirstFailure)
             .NotNull()
-            .WithErrorCode(ResourceHelper.getErrorCode("Null Field Error"))
-            .WithMessage(ResourceHelper.getErrorData("Null Field Error", "Password"))
+            .WithErrorCode(ResourceHelper.getErrorCode("Null_Field_Error"))
+            .WithMessage(ResourceHelper.getErrorData("Null_Field_Error", "Password"))
             .NotEmpty()
-            .WithErrorCode(ResourceHelper.getErrorCode("Blank Field Error"))
-            .WithMessage(ResourceHelper.getErrorData("Blank Field Error", "Password"));
+            .WithErrorCode(ResourceHelper.getErrorCode("Blank_Field_Error"))
+            .WithMessage(ResourceHelper.getErrorData("Blank_Field_Error", "Password"));
         }
     }
 }
