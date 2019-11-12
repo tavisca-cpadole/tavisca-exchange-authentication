@@ -1,5 +1,11 @@
 //Error response object
 {
-    "code": "401",
-	"message": "Invalid Username/Password"				
+    "code": "701",
+	"message": "Invalid Username/Password",
+	"info":[
+			{
+				"code":"804",
+				"message":"Requested data is not found"
+			}
+	]
 }
