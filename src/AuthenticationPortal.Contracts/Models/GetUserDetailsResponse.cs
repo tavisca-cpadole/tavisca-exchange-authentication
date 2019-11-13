@@ -1,6 +1,6 @@
-﻿namespace AuthenticationPortal.Core
+﻿namespace AuthenticationPortal.Contracts
 {
-    public class AddUserRequest
+    public class GetUserDetailsResponse
     {
         public string Id { get; set; }
         public string FirstName { get; set; }

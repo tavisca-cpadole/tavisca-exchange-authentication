@@ -2,8 +2,9 @@
 
 namespace AuthenticationPortal.Contracts
 {
-    public interface IUserStore<T> where T : class
+    public interface IUserStore
     {
-        Task<UserResult> AddUserAsync(UserEntity request);
+        Task<AddUserResult> AddUserAsync(UserEntity request);
+        Task<GetUserResult> GetUserAsync(UserEntity request);
     }
 }

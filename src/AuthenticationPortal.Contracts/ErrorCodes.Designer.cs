@@ -88,6 +88,15 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid Store Name Passed.
+        /// </summary>
+        internal static string Invalid_Store {
+            get {
+                return ResourceManager.GetString("Invalid_Store", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid Username/Password.
         /// </summary>
         internal static string Login_Error {

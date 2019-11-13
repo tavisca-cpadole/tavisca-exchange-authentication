@@ -1,6 +1,6 @@
 ﻿namespace AuthenticationPortal.Contracts
 {
-    public class AddUserResponse
+    public class AddUserResult
     {
         public string Id { get; set; }
     }

@@ -88,6 +88,15 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 810.
+        /// </summary>
+        internal static string Invalid_Store {
+            get {
+                return ResourceManager.GetString("Invalid_Store", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 801.
         /// </summary>
         internal static string Login_Error {
@@ -106,7 +115,7 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 808.
+        ///   Looks up a localized string similar to 809.
         /// </summary>
         internal static string Server_Error {
             get {

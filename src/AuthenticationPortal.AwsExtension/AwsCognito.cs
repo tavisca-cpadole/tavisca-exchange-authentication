@@ -3,7 +3,6 @@ using Amazon.CognitoIdentityProvider.Model;
 using Amazon.Extensions.CognitoAuthentication;
 using AuthenticationPortal.Contracts;
 using AuthenticationPortal.Core;
-using AuthenticationPortal.MongoDBStore;
 using Microsoft.Extensions.Options;
 using System.Linq;
 using System.Net;
@@ -14,8 +13,9 @@ namespace AuthenticationPortal.AwsExtension
     public class AwsCognito : IUserAuthenticationAdapter
     {
         private readonly AwsCognitoCredentials _settings;
-        private readonly IUserStore<MongoUserStore> _userStore;
-        public AwsCognito(IOptions<AwsCognitoCredentials> settings, IUserStore<MongoUserStore> userStore)
+        private readonly IUserStoreFactory _userStoreFactory;
+        private readonly IUserStore _userStore;
+        public AwsCognito(IOptions<AwsCognitoCredentials> settings, IUserStore userStore)
         {
             _settings = settings.Value;
             _userStore = userStore;
@@ -45,18 +45,21 @@ namespace AuthenticationPortal.AwsExtension
                     AccessToken = authResponse.AuthenticationResult.AccessToken
                 };
                 GetUserResponse getUser = await providerClient.GetUserAsync(getUserRequest);
+
                 Contracts.AddUserRequest addUserRequest = new Contracts.AddUserRequest()
                 {
-                    UserId = getUser.UserAttributes[1].Value,
-                    FirstName = getUser.UserAttributes.Where(a => a.Name == "custom:Firstname").First().Value,
-                    LastName = getUser.UserAttributes.Where(a => a.Name == "custom:Lastname").First().Value,
-                    ContactNumber = getUser.UserAttributes.Where(a => a.Name == "phone_number").First().Value,
-                    Email = getUser.UserAttributes.Where(a => a.Name == "email").First().Value,
+                    Id = getUser.UserAttributes[1].Value,
+                    FirstName = getUser.UserAttributes.Where(a => a.Name == "custom:Firstname").FirstOrDefault().Value,
+                    LastName = getUser.UserAttributes.Where(a => a.Name == "custom:Lastname").FirstOrDefault().Value,
+                    ContactNumber = getUser.UserAttributes.Where(a => a.Name == "phone_number").FirstOrDefault().Value,
+                    Email = getUser.UserAttributes.Where(a => a.Name == "email").FirstOrDefault().Value,
 
                 };
-
-                var response = await UserDetails.SaveAsync(addUserRequest, _userStore);
-                _signInResponse.UserId = response.UserId;
+                if (UserDetails.GetAsync(addUserRequest.ToEntity(), _userStore).Result == null)
+                {
+                    var response = await UserDetails.SaveAsync(addUserRequest, _userStore);
+                }
+                _signInResponse.UserId = getUser.UserAttributes[1].Value;
                 if (signInRequest.RememberMe)
                     _signInResponse.RefreshToken = authResponse.AuthenticationResult.RefreshToken;
                 _signInResponse.AccessToken = authResponse.AuthenticationResult.AccessToken;

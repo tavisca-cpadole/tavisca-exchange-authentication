@@ -78,7 +78,8 @@ namespace AuthenticationPortal.Web
             builder.RegisterType<AWSCognitoAuth>().As<ITokenAuthenticatorAdapter>();
             builder.RegisterType<UserAuthenticationService>().As<IUserAuthenticationService>();
             builder.RegisterType<TokenAuthenticationService>().As<ITokenAuthenticationService>();
-            builder.RegisterType<MongoUserStore>().As<IUserStore<MongoUserStore>>();
+            builder.RegisterType<MongoUserStore>().As<IUserStore>();
+            builder.RegisterType<UserDetailsService>().As<IUserDetailsService>();
         }
     }
 }

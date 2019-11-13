@@ -1,6 +1,6 @@
 ﻿namespace AuthenticationPortal.Contracts
 {
-    public class UserResult
+    public class GetUserDetailsRequest
     {
         public string UserId { get; set; }
     }

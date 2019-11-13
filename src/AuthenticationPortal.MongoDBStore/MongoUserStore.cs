@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AuthenticationPortal.MongoDBStore
 {
-    public class MongoUserStore : IUserStore<MongoUserStore>
+    public class MongoUserStore : IUserStore
     {
         private static MongoClient _dbClient = new MongoClient(new MongoClientSettings
         {
@@ -18,20 +18,34 @@ namespace AuthenticationPortal.MongoDBStore
         private IMongoDatabase _db = _dbClient.GetDatabase(MongoDBConfiguration.Database);
         private string _collection = MongoDBConfiguration.ProductCollection;
 
-        public async Task<UserResult> AddUserAsync(UserEntity query)
+        public async Task<AddUserResult> AddUserAsync(UserEntity query)
         {
             var mongoEntity = query.ToEntity();
             var userStoreCollection = _db.GetCollection<MongoEntity>(_collection);
             try
             {
-                var filter = Builders<MongoEntity>.Filter.Eq("userId", mongoEntity.UserId);
-                await userStoreCollection.ReplaceOneAsync(filter, mongoEntity, new UpdateOptions { IsUpsert = true });
+                await userStoreCollection.InsertOneAsync(mongoEntity);
             }
             catch
             {
                 throw new CustomException(HttpStatusCode.InternalServerError, "Database_Down");
             }
             return mongoEntity.ToModel();
+        }
+
+        public async Task<GetUserResult> GetUserAsync(UserEntity query)
+        {
+            var mongoEntity = query.ToEntity();
+            var userStoreCollection = _db.GetCollection<MongoEntity>(_collection);
+            try
+            {
+                var x = (await userStoreCollection.Find(_ => _.Id == mongoEntity.Id).FirstOrDefaultAsync()).ToGetUserModel();
+                return x;
+            }
+            catch (Exception ex)
+            {
+                throw new CustomException(HttpStatusCode.InternalServerError, "Database_Down");
+            }
         }
     }
 }

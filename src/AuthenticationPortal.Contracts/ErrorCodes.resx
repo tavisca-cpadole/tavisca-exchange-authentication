@@ -126,6 +126,9 @@
   <data name="Invalid_Length_Error" xml:space="preserve">
     <value>Invalid {0} Length</value>
   </data>
+  <data name="Invalid_Store" xml:space="preserve">
+    <value>Invalid Store Name Passed</value>
+  </data>
   <data name="Login_Error" xml:space="preserve">
     <value>Invalid Username/Password</value>
   </data>
