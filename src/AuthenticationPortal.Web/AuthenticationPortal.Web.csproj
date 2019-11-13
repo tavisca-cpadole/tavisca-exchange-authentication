@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AuthenticationPortal.AwsExtension\AuthenticationPortal.AwsExtension.csproj" />
     <ProjectReference Include="..\AuthenticationPortal.Contracts\AuthenticationPortal.Contracts.csproj" />
+    <ProjectReference Include="..\AuthenticationPortal.MongoDBStore\AuthenticationPortal.MongoDBStore.csproj" />
     <ProjectReference Include="..\AuthenticationPortal.Services\AuthenticationPortal.Services.csproj" />
   </ItemGroup>
 

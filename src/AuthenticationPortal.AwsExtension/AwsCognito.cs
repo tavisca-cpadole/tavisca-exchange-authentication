@@ -2,7 +2,10 @@
 using Amazon.CognitoIdentityProvider.Model;
 using Amazon.Extensions.CognitoAuthentication;
 using AuthenticationPortal.Contracts;
+using AuthenticationPortal.Core;
+using AuthenticationPortal.MongoDBStore;
 using Microsoft.Extensions.Options;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -11,9 +14,11 @@ namespace AuthenticationPortal.AwsExtension
     public class AwsCognito : IUserAuthenticationAdapter
     {
         private readonly AwsCognitoCredentials _settings;
-        public AwsCognito(IOptions<AwsCognitoCredentials> settings)
+        private readonly IUserStore<MongoUserStore> _userStore;
+        public AwsCognito(IOptions<AwsCognitoCredentials> settings, IUserStore<MongoUserStore> userStore)
         {
             _settings = settings.Value;
+            _userStore = userStore;
         }
 
         static Amazon.RegionEndpoint region = Amazon.RegionEndpoint.APSouth1;
@@ -40,7 +45,18 @@ namespace AuthenticationPortal.AwsExtension
                     AccessToken = authResponse.AuthenticationResult.AccessToken
                 };
                 GetUserResponse getUser = await providerClient.GetUserAsync(getUserRequest);
-                _signInResponse.UserId = getUser.UserAttributes[0].Value;
+                Contracts.AddUserRequest addUserRequest = new Contracts.AddUserRequest()
+                {
+                    UserId = getUser.UserAttributes[1].Value,
+                    FirstName = getUser.UserAttributes.Where(a => a.Name == "custom:Firstname").First().Value,
+                    LastName = getUser.UserAttributes.Where(a => a.Name == "custom:Lastname").First().Value,
+                    ContactNumber = getUser.UserAttributes.Where(a => a.Name == "phone_number").First().Value,
+                    Email = getUser.UserAttributes.Where(a => a.Name == "email").First().Value,
+
+                };
+
+                var response = await UserDetails.SaveAsync(addUserRequest, _userStore);
+                _signInResponse.UserId = response.UserId;
                 if (signInRequest.RememberMe)
                     _signInResponse.RefreshToken = authResponse.AuthenticationResult.RefreshToken;
                 _signInResponse.AccessToken = authResponse.AuthenticationResult.AccessToken;

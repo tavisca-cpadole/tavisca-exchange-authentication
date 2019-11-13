@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationPortal.Web", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationPortal.Tests", "ApplicationPortal.Tests\ApplicationPortal.Tests.csproj", "{0518872D-CA5B-4939-BF53-6154D20237BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationPortal.AwsExtension", "src\AuthenticationPortal.AwsExtension\AuthenticationPortal.AwsExtension.csproj", "{7446A30A-C8F9-43C8-A40F-F1C311707AEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationPortal.AwsExtension", "src\AuthenticationPortal.AwsExtension\AuthenticationPortal.AwsExtension.csproj", "{7446A30A-C8F9-43C8-A40F-F1C311707AEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationPortal.MongoDBStore", "src\AuthenticationPortal.MongoDBStore\AuthenticationPortal.MongoDBStore.csproj", "{EBEB458C-ECAC-41FA-8612-1095B61ADD69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{7446A30A-C8F9-43C8-A40F-F1C311707AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7446A30A-C8F9-43C8-A40F-F1C311707AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7446A30A-C8F9-43C8-A40F-F1C311707AEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBEB458C-ECAC-41FA-8612-1095B61ADD69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBEB458C-ECAC-41FA-8612-1095B61ADD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBEB458C-ECAC-41FA-8612-1095B61ADD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBEB458C-ECAC-41FA-8612-1095B61ADD69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

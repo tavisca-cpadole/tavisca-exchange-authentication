@@ -120,6 +120,9 @@
   <data name="Blank_Field_Error" xml:space="preserve">
     <value>{0} cannot be Blank</value>
   </data>
+  <data name="Database_Down" xml:space="preserve">
+    <value>Unexpected Error Occured, Please Try Again Later</value>
+  </data>
   <data name="Invalid_Length_Error" xml:space="preserve">
     <value>Invalid {0} Length</value>
   </data>

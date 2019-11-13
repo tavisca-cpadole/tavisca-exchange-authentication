@@ -117,31 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Blank_Field_Error" xml:space="preserve">
-    <value>804</value>
+  <data name="Database" xml:space="preserve">
+    <value>ORP</value>
   </data>
-  <data name="Database_Down" xml:space="preserve">
-    <value>808</value>
+  <data name="Port" xml:space="preserve">
+    <value>27017</value>
   </data>
-  <data name="Invalid_Length_Error" xml:space="preserve">
-    <value>805</value>
+  <data name="ProductCollection" xml:space="preserve">
+    <value>User</value>
   </data>
-  <data name="Login_Error" xml:space="preserve">
-    <value>801</value>
-  </data>
-  <data name="Null_Field_Error" xml:space="preserve">
-    <value>806</value>
-  </data>
-  <data name="Server_Error" xml:space="preserve">
-    <value>808</value>
-  </data>
-  <data name="Token_Request_Error" xml:space="preserve">
-    <value>803</value>
-  </data>
-  <data name="Token_Validation_Error" xml:space="preserve">
-    <value>802</value>
-  </data>
-  <data name="Validation_Error" xml:space="preserve">
-    <value>807</value>
+  <data name="Url" xml:space="preserve">
+    <value>127.0.0.1</value>
   </data>
 </root>

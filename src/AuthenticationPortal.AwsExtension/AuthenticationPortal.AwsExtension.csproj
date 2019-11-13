@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AuthenticationPortal.Contracts\AuthenticationPortal.Contracts.csproj" />
+    <ProjectReference Include="..\AuthenticationPortal.Core\AuthenticationPortal.Core.csproj" />
   </ItemGroup>
 
 </Project>

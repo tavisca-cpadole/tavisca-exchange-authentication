@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AuthenticationPortal.Contracts {
+namespace AuthenticationPortal.MongoDBStore {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace AuthenticationPortal.Contracts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ErrorMessages {
+    public class MongoDBConfiguration {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ErrorMessages() {
+        internal MongoDBConfiguration() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AuthenticationPortal.Contracts.ErrorMessages", typeof(ErrorMessages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AuthenticationPortal.MongoDBStore.MongoDBConfiguration", typeof(MongoDBConfiguration).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace AuthenticationPortal.Contracts {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,83 +61,38 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 804.
+        ///   Looks up a localized string similar to ORP.
         /// </summary>
-        internal static string Blank_Field_Error {
+        public static string Database {
             get {
-                return ResourceManager.GetString("Blank_Field_Error", resourceCulture);
+                return ResourceManager.GetString("Database", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 808.
+        ///   Looks up a localized string similar to 27017.
         /// </summary>
-        internal static string Database_Down {
+        public static string Port {
             get {
-                return ResourceManager.GetString("Database_Down", resourceCulture);
+                return ResourceManager.GetString("Port", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 805.
+        ///   Looks up a localized string similar to User.
         /// </summary>
-        internal static string Invalid_Length_Error {
+        public static string ProductCollection {
             get {
-                return ResourceManager.GetString("Invalid_Length_Error", resourceCulture);
+                return ResourceManager.GetString("ProductCollection", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 801.
+        ///   Looks up a localized string similar to 127.0.0.1.
         /// </summary>
-        internal static string Login_Error {
+        public static string Url {
             get {
-                return ResourceManager.GetString("Login_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 806.
-        /// </summary>
-        internal static string Null_Field_Error {
-            get {
-                return ResourceManager.GetString("Null_Field_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 808.
-        /// </summary>
-        internal static string Server_Error {
-            get {
-                return ResourceManager.GetString("Server_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 803.
-        /// </summary>
-        internal static string Token_Request_Error {
-            get {
-                return ResourceManager.GetString("Token_Request_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 802.
-        /// </summary>
-        internal static string Token_Validation_Error {
-            get {
-                return ResourceManager.GetString("Token_Validation_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 807.
-        /// </summary>
-        internal static string Validation_Error {
-            get {
-                return ResourceManager.GetString("Validation_Error", resourceCulture);
+                return ResourceManager.GetString("Url", resourceCulture);
             }
         }
     }

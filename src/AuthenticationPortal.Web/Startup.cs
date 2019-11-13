@@ -1,5 +1,6 @@
 using AuthenticationPortal.AwsExtension;
 using AuthenticationPortal.Contracts;
+using AuthenticationPortal.MongoDBStore;
 using AuthenticationPortal.Services;
 using Autofac;
 using FluentValidation;
@@ -77,6 +78,7 @@ namespace AuthenticationPortal.Web
             builder.RegisterType<AWSCognitoAuth>().As<ITokenAuthenticatorAdapter>();
             builder.RegisterType<UserAuthenticationService>().As<IUserAuthenticationService>();
             builder.RegisterType<TokenAuthenticationService>().As<ITokenAuthenticationService>();
+            builder.RegisterType<MongoUserStore>().As<IUserStore<MongoUserStore>>();
         }
     }
 }
