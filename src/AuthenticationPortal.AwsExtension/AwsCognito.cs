@@ -55,6 +55,7 @@ namespace AuthenticationPortal.AwsExtension
                     Email = getUser.UserAttributes.Where(a => a.Name == "email").FirstOrDefault().Value,
 
                 };
+                //getasync should only require only id
                 if (UserDetails.GetAsync(addUserRequest.ToEntity(), _userStore).Result == null)
                 {
                     var response = await UserDetails.SaveAsync(addUserRequest, _userStore);

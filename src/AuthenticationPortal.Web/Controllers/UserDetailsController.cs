@@ -1,6 +1,5 @@
 ﻿using AuthenticationPortal.Contracts;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace AuthenticationPortal.Web.Controllers
@@ -15,17 +14,12 @@ namespace AuthenticationPortal.Web.Controllers
         {
             this._userDetailsService = userDetailsService;
         }
-        // GET: api/UserDetails
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
         // GET: api/UserDetails/5
         [HttpGet("profile/{userId}")]
         public async Task<IActionResult> GetUser(string userId)
         {
+            // TBA- validations
             var serviceResponse = await (_userDetailsService.GetUserAsync(userId.ToEntity()));
             return Ok(serviceResponse.ToModel());
         }
