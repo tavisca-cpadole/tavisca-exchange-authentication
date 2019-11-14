@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 namespace AuthenticationPortal.Web
 {
-    [Route("api/v1.0/ORP")]
+    [Route("api/v1.0/OnlineRetailPortal")]
     [ApiController]
     public class SigninController : ControllerBase
     {
