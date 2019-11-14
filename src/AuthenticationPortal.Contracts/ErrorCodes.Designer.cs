@@ -70,11 +70,29 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unexpected Error Occured, Please Try Again Later.
+        /// </summary>
+        internal static string Database_Down {
+            get {
+                return ResourceManager.GetString("Database_Down", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid {0} Length.
         /// </summary>
         internal static string Invalid_Length_Error {
             get {
                 return ResourceManager.GetString("Invalid_Length_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Store Name Passed.
+        /// </summary>
+        internal static string Invalid_Store {
+            get {
+                return ResourceManager.GetString("Invalid_Store", resourceCulture);
             }
         }
         

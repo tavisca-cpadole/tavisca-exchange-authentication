@@ -120,8 +120,14 @@
   <data name="Blank_Field_Error" xml:space="preserve">
     <value>804</value>
   </data>
+  <data name="Database_Down" xml:space="preserve">
+    <value>808</value>
+  </data>
   <data name="Invalid_Length_Error" xml:space="preserve">
     <value>805</value>
+  </data>
+  <data name="Invalid_Store" xml:space="preserve">
+    <value>810</value>
   </data>
   <data name="Login_Error" xml:space="preserve">
     <value>801</value>
@@ -130,7 +136,7 @@
     <value>806</value>
   </data>
   <data name="Server_Error" xml:space="preserve">
-    <value>808</value>
+    <value>809</value>
   </data>
   <data name="Token_Request_Error" xml:space="preserve">
     <value>803</value>

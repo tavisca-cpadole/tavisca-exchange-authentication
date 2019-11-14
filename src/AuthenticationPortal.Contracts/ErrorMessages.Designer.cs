@@ -70,11 +70,29 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 808.
+        /// </summary>
+        internal static string Database_Down {
+            get {
+                return ResourceManager.GetString("Database_Down", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 805.
         /// </summary>
         internal static string Invalid_Length_Error {
             get {
                 return ResourceManager.GetString("Invalid_Length_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 810.
+        /// </summary>
+        internal static string Invalid_Store {
+            get {
+                return ResourceManager.GetString("Invalid_Store", resourceCulture);
             }
         }
         
@@ -97,7 +115,7 @@ namespace AuthenticationPortal.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 808.
+        ///   Looks up a localized string similar to 809.
         /// </summary>
         internal static string Server_Error {
             get {

@@ -20,10 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AuthenticationPortal.Contracts\AuthenticationPortal.Contracts.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Translators\" />
+    <ProjectReference Include="..\AuthenticationPortal.Core\AuthenticationPortal.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -15,12 +15,20 @@
     <PackageReference Include="AWSSDK.SecurityToken" Version="3.3.103.1" />
     <PackageReference Include="FluentValidation" Version="8.5.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="8.5.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AuthenticationPortal.AwsExtension\AuthenticationPortal.AwsExtension.csproj" />
     <ProjectReference Include="..\AuthenticationPortal.Contracts\AuthenticationPortal.Contracts.csproj" />
+    <ProjectReference Include="..\AuthenticationPortal.MongoDBStore\AuthenticationPortal.MongoDBStore.csproj" />
     <ProjectReference Include="..\AuthenticationPortal.Services\AuthenticationPortal.Services.csproj" />
   </ItemGroup>
 

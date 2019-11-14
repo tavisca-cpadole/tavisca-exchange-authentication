@@ -117,34 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Blank_Field_Error" xml:space="preserve">
-    <value>{0} cannot be Blank</value>
+  <data name="Database" xml:space="preserve">
+    <value>ORP</value>
   </data>
-  <data name="Database_Down" xml:space="preserve">
-    <value>Unexpected Error Occured, Please Try Again Later</value>
+  <data name="Port" xml:space="preserve">
+    <value>27017</value>
   </data>
-  <data name="Invalid_Length_Error" xml:space="preserve">
-    <value>Invalid {0} Length</value>
+  <data name="ProductCollection" xml:space="preserve">
+    <value>User</value>
   </data>
-  <data name="Invalid_Store" xml:space="preserve">
-    <value>Invalid Store Name Passed</value>
-  </data>
-  <data name="Login_Error" xml:space="preserve">
-    <value>Invalid Username/Password</value>
-  </data>
-  <data name="Null_Field_Error" xml:space="preserve">
-    <value>{0} cannot be null</value>
-  </data>
-  <data name="Server_Error" xml:space="preserve">
-    <value>Unexpected Error Occured, Please Refer the Logs</value>
-  </data>
-  <data name="Token_Request_Error" xml:space="preserve">
-    <value>Header is missing the AuthKey Field</value>
-  </data>
-  <data name="Token_Validation_Error" xml:space="preserve">
-    <value>Invalid Access Token</value>
-  </data>
-  <data name="Validation_Error" xml:space="preserve">
-    <value>Following Validation Errors Occured</value>
+  <data name="Url" xml:space="preserve">
+    <value>127.0.0.1</value>
   </data>
 </root>
