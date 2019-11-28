@@ -22,7 +22,8 @@ namespace AuthenticationPortal.Web
                     Id = user.Id,
                     EmailId = user.Email,
                     ContactNumber = user.ContactNumber,
-                    Name = user.FirstName + " " + user.LastName,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
                     ProfileImageUrl = "https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-vector-user-young-boy-avatar-icon-png-image_1538408.jpg"
                 }
             };

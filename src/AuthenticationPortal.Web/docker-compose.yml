@@ -1,0 +1,7 @@
+version: '1'
+services:
+  authenticationportal:
+    image: tavex/sampleapi
+    build:
+      context: ./AuthenticationPortal
+      dockerfile: Dockerfile
